@@ -3,9 +3,14 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import { educations } from "@/utils/data/educations";
 import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
+// import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 import lottieFile from './study.json';
+
+import dynamic from 'next/dynamic';
+const AnimationLottie = dynamic(() => import('../../helper/animation-lottie'), {
+  ssr: false,
+});
 
 function Education() {
   const [isLoaded, setIsLoaded] = useState(false);
